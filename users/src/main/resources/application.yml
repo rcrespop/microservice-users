@@ -1,0 +1,29 @@
+# Spring properties
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      uri: mongodb://localhost/test
+  application:
+    name: user-service  # Service registers under this name
+
+endpoints:
+  health:
+    enabled: yes
+  shutdown:
+    enabled: yes
+
+management:
+    context-path: /admin
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          client: DEBUG
+
+# HTTP Server
+server:
+  port: 4444   # HTTP (Tomcat) port
+
