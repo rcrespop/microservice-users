@@ -1,6 +1,5 @@
 package net.robertocrespo.microservices.users.exception;
 
-
 import org.springframework.core.NestedRuntimeException;
 
 /**

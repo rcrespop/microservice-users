@@ -14,8 +14,7 @@ public interface UserRepository{
 
        
    /**
-    * Find a users list 
-    
+    * Find a users list     
     * @return
     */
   Optional<List<User>> findAll();

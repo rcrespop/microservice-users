@@ -96,12 +96,6 @@ public class UsersController {
     	log.info("update user " + user.getUserId());
         usersService.updateUser(user);
         return ResponseEntity.noContent().build();
-    }
-    
-    @RequestMapping("/info")
-	public String goHome() {
-		return "index.html";
-	}
-
+    }   
 
 }

@@ -24,6 +24,24 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<scm>
+		<connection>scm:git:https://github.com/rcrespop/microservice-users.git</connection>
+		<developerConnection>scm:git:https://${username}:${password}@github.com/rcrespop/microservice-users.git</developerConnection>
+		<url>scm:git:https://rcrespop@github.com/rcrespop/microservice-users.git</url>
+		<tag>HEAD</tag>
+	</scm>
+	
+	 <distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<url>http://localhost:8081/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 
 	<dependencies>
 		<dependency>
@@ -42,7 +60,7 @@
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-		</dependency>		
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -59,6 +77,19 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.3</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
 		</plugins>
 	</build>
 </project>

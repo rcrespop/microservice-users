@@ -43,6 +43,4 @@ public interface UserService {
      * @param userId
      */
     void deleteUser(String userId);
-
-
 }
